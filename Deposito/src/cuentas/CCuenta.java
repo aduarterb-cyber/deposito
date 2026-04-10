@@ -1,4 +1,12 @@
 package cuentas;
+
+/**
+ * Clase cuenta bancaria.
+ * Se pueden realizar operaciones.
+ * 
+ * @author Alejandro
+ */
+
 public class CCuenta {
 
 
@@ -11,6 +19,12 @@ public class CCuenta {
     {
     }
 
+    /**
+     * @param nom nombre titular
+     * @param cue numero cuenta
+     * @param sal saldo
+     * @param tipo interes
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -18,11 +32,21 @@ public class CCuenta {
         saldo=sal;
     }
 
+    /**
+     * Devuelve saldo actual
+     * 
+     * @return saldo disponible
+     */
     public double estado()
     {
         return saldo;
     }
 
+    /**
+     * Permite ingresar dinero
+     * @param cantidad dinero a ingresar 
+     * @throws Exception si cantidad es negativa
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -30,6 +54,11 @@ public class CCuenta {
         saldo = saldo + cantidad;
     }
 
+    /**
+     * Permite retirar dinero
+     * @param cantidad dinero a retirar
+     * @throws Exception si cantidad es negativa o mayor al saldo
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
